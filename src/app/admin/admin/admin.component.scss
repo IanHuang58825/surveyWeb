@@ -1,0 +1,74 @@
+// //side nav 顏色
+$sideNav-bg-color: #dadee9;
+//建立問卷按鈕
+$createBtn-bg-color: #666ab0;
+$createBtn-hover-bg-color: #f7961c;
+$createBtn-color: #dae2f9;
+$createBtn-hover-color: #3e3d95;
+$createBtn-border-color: #3e3d95;
+//WorkSpace文字顏色
+$h4-color: #3e3d95;
+
+//////////////////////////////////////////
+.fixed-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; // 確保在所有東西之上
+}
+
+.toggle {
+  margin-left: 15px;
+  position: fixed;
+  top: 10vh;
+  scale: 1.5;
+}
+
+input {
+  height: 30px;
+  border-radius: 20px;
+}
+
+.example-container {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 64px); // 假設 toolbar 高度為 64px（Angular Material 預設）
+  top: 64px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+//左側欄位
+.example-sidenav {
+  width: 20%;
+  background-color: $sideNav-bg-color;
+}
+
+.funcBtn {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  width: 80%;
+  height: 50px;
+  border: 2px solid $createBtn-border-color;
+  background-color: $createBtn-bg-color;
+  color: $createBtn-color;
+  border-radius: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.funcBtn:hover {
+  background-color: $createBtn-hover-bg-color;
+  color: $createBtn-hover-color;
+  transform: scale(1.05);
+
+}
+
+h4 {
+  margin-top: 30px;
+  text-align: center;
+  color: $h4-color;
+}

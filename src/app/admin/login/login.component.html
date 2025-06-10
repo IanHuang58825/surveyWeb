@@ -1,0 +1,10 @@
+<app-toolbar2></app-toolbar2>
+<div class="container">
+  <mat-icon>account_circle</mat-icon>
+  <label>Username: <input type="email" name="userName" placeholder="email" [(ngModel)]="username"></label>
+  <label>Password:
+    <input type="password" name="text" placeholder="password" [(ngModel)]="password" pattern="[a-z0-5]{8,}">
+  </label>
+  <button type="submit" (click)="login()">Log in</button>
+  <p routerLink="/register">register now</p>
+</div>

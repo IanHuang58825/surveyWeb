@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="dateBox">
+    <!-- 開始日期 -->
+    <span>From</span>
+    <input name="startDate" type="date" [(ngModel)]="startDate">
+    <!-- 結束日期 -->
+    <span>To</span>
+    <input name="endDate" type="date" [min]="startDate" [(ngModel)]="endDate">
+  </div>
+  <div class="searchBox">
+    <!-- 搜尋欄位 未完成 -->
+    <input class="searchInput" [(ngModel)]="inputText" placeholder="Survey Title">
+    <button class="resetBtn">
+      <mat-icon (click)="resetInput()">restart_alt</mat-icon>
+    </button>
+    <button (click)="searchData()">
+      <mat-icon >search</mat-icon>Search
+    </button>
+  </div>
+</div>
+<!-- delBtn -->
+<div class="tool-box">
+  @if(!del){
+    <button (click)="showDel(true)">
+      <mat-icon>delete</mat-icon>delete
+    </button>
+  }
+  @if(del){
+    <button (click)="delSurvey()">
+      <mat-icon>delete</mat-icon>delete
+    </button>
+    <button (click)="showDel(false)">
+      <mat-icon>cancel</mat-icon>cancel
+    </button>
+  }
+</div>
+<!-- Mat-table -->
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- Del Column -->
+    <ng-container matColumnDef="bs_checkbox">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+          [checked]="selection.hasValue() && isAllSelected()"
+          [indeterminate]="selection.hasValue() && !isAllSelected()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+          (change)="$event ? selection.toggle(row) : null"
+          [checked]="selection.isSelected(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <!-- No Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- State Column -->
+    <ng-container matColumnDef="state">
+      <th mat-header-cell *matHeaderCellDef> State </th>
+      <td mat-cell *matCellDef="let element"> {{getStatus(element)}} </td>
+    </ng-container>
+
+    <!-- Start Date Column -->
+    <ng-container matColumnDef="startDate">
+      <th mat-header-cell *matHeaderCellDef> Start Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+    </ng-container>
+
+    <!-- End Date Column -->
+    <ng-container matColumnDef="endDate">
+      <th mat-header-cell *matHeaderCellDef> End Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
+    </ng-container>
+
+    <!-- Result Column -->
+    <ng-container matColumnDef="result">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <span class="seeResult" (click)="seeResult(element)">
+          See Result
+        </span>
+        <span class="seeResult" (click)="goEdit(element)">
+          Edit
+        </span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

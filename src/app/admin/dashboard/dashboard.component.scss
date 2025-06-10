@@ -1,0 +1,108 @@
+$table-border-color: #432344;
+//th顏色
+$th-bg-color: #dae2f9;
+$th-color: #3e3d95;
+//data顏色
+$td-bg-color: #e7eefb;
+$td-color: #432344;
+//pie
+$chart-bg-color: #dae2f9;
+// see result顏色
+$see-result-color: #f8f9fd;
+$see-result-bg-color: #666ab0;
+$see-result-hover-color: #f7961c;
+
+//////////////////////////////////////////////////////////////
+h1,
+h2,
+h3 {
+  color: $th-color;
+  text-align: center;
+  margin: 20px auto;
+}
+
+h2 {
+  width: 70%;
+}
+
+.na {
+  color: red;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: 15px;
+}
+
+table {
+  margin: 10px auto;
+  width: 80%;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid $table-border-color;
+}
+
+th {
+  color: $th-color;
+  background-color: $th-bg-color;
+  font-weight: 600;
+}
+
+td {
+  background-color: $td-bg-color;
+}
+
+tr:hover {
+  color: $see-result-hover-color;
+}
+
+.alert {
+  padding: 15px;
+  margin: 20px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.prevBtn {
+  margin: 20px auto auto 5%;
+}
+
+.content {
+  display: block;
+}
+
+.chart-container {
+  margin: 48px auto;
+  width: 83%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* 每行 2 個 */
+  gap: 24px;
+  /* 每個圖之間的間距 */
+  padding: 16px;
+}
+
+.chart-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  background-color: $chart-bg-color;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(33, 33, 33, 0.05);
+  height: auto;
+  overflow: hidden;
+  /* 新增這行避免 chart 超出後佔位錯誤 */
+}
+
+
+.chart-item canvas {
+  width: 300px !important;
+  height: 300px !important;
+}

@@ -1,0 +1,28 @@
+span{
+  color:#666ab0;
+}
+
+p {
+  display: block;
+  margin-top: 10px;
+  color: #e73f08;
+}
+
+button {
+  color: #3e3d95;
+  background-color: #cbd3eb;
+  width: 60px;
+  height: 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 10px;
+  animation: fadeIn 3s ease-in forwards;
+}
+
+button:hover {
+  color: white;
+  background-color: #666ab0;
+  transform: scale(1.05);
+}

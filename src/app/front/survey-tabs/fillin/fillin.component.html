@@ -1,0 +1,84 @@
+<button class="pageBtn prevBtn" (click)="goBack()">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<div class="surveyBox">
+  <!-- 問卷基本資訊 -->
+  <div class="infoBox">
+    <h2 class="title">{{survey.name}}</h2>
+    <h3 class="survey-info">Description:</h3>
+    <h3 class="survey-info">{{survey.description}}</h3>
+    <h3>
+      <label class="person"> Name:
+        <span style="color: red;">*</span>
+        <input type="text" [(ngModel)]="survey.user_name">
+      </label>
+    </h3>
+    <h3>
+      <label class="person"> Email:
+        <span style="color: red;">*</span>
+        <input type="email" [(ngModel)]="survey.email">
+      </label>
+    </h3>
+    <h3>
+      <label class="person"> Phone:
+        <span style="color: red;">*</span>
+        <input type="text" [(ngModel)]="survey.phone">
+      </label>
+    </h3>
+    <h3>
+      <label class="person"> Age:
+        <span style="color: red;">*</span>
+        <input type="number" [(ngModel)]="survey.age" min="1">
+      </label>
+    </h3>
+  </div>
+  <!-- 問題資料 -->
+  <div class="questions-container">
+    @for(questionData of survey.questionList; track $index){
+    <div class="questionBox">
+      <h3>
+        Question{{$index+1}}: {{questionData.name}}
+        @if(questionData.must){
+        <span style="color: red;">*</span>
+        }
+      </h3>
+    </div>
+    <!-- 選項資料 -->
+    <!-- 簡答 -->
+    @if(questionData.type == 'text'){
+    <label>
+      <textarea rows="10" cols="50" [(ngModel)]="questionData.answer"></textarea>
+    </label>
+    }
+    <!-- 單選 -->
+    @if(questionData.type == 'single'){
+    <div class="choices-box">
+      <ol>
+        @for(choiceData of questionData.options; track $index){
+        <div class="choice-item">
+          <li><input type="radio" name="singleQues" [value]="choiceData.opId"
+              [(ngModel)]="questionData.radioAns">{{choiceData.op}}</li>
+        </div>
+        }
+      </ol>
+    </div>
+    }
+    <!-- 多選 -->
+    @if(questionData.type == 'multi'){
+    <div class="choices-box">
+      <ol>
+        @for(choiceData of questionData.options; track $index){
+        <div class="choice-item">
+          <li><input type="checkbox" [(ngModel)]="choiceData.boxBoolean">{{choiceData.op}}</li>
+        </div>
+        }
+      </ol>
+    </div>
+    }
+    }
+    <div class="line"></div>
+    <button type="button" class="nextPageBtn pageBtn" (click)="nextPage()" [disabled]="
+    !survey.user_name || !survey.phone || !survey.email || !survey.age">
+      <mat-icon style="scale: 1.5;">arrow_forward</mat-icon>
+    </button>
+  </div>

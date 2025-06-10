@@ -1,0 +1,180 @@
+//th顏色
+$th-bg-color: #dae2f9;
+$th-color: #3e3d95;
+//data顏色
+$td-bg-color: #e7eefb;
+$td-color: #432344;
+//paginator
+$paginator-bg-color: #dae2f9;
+$paginator-border-color: #3e3d95;
+//搜尋區
+$container-bg-color: #dae2f9;
+$container-border-color: #3e3d95;
+$container-color: #432344;
+//輸入欄顏色
+$input-color: #432344;
+$input-bg-color: #e7eefb;
+$input-border-color: #432344;
+$input-focus-border-color: #666ab0;
+$input-dateBox-bg-color-disable: lightgray;
+$input-dateBox-border-color-disable: #777777;
+$input-dateBox-color-disable: #aaaaaa;
+//重製按鈕顏色
+$icon-color: #666ab0;
+$icon-hover-color: #3e3d95;
+//url顏色
+$url-color: #004dff;
+// see result顏色
+$see-result-color: #f8f9fd;
+$see-result-bg-color:#666ab0;
+$see-result-hover-color:#3e3d95;
+$see-result-hover-bg-color: #f7961c;
+//////////////////////////////////////////////////
+
+table {
+  width: 70%;
+}
+
+.mat-elevation-z8 {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 80%;
+  border: 1px solid $paginator-border-color;
+  border-radius: 10px;
+  overflow: hidden !important;
+}
+
+th {
+  text-align: center;
+  font-weight: 600;
+  padding: 12px;
+  color: $th-color;
+  background-color: $th-bg-color !important;
+
+}
+
+td {
+  text-align: center;
+  background-color: $td-bg-color;
+  color: $td-color;
+
+}
+
+mat-paginator {
+  background-color: $paginator-bg-color;
+  border-top: 1px solid $paginator-border-color;
+}
+
+//////////////////////////////////
+.container {
+  width: 80%;
+  margin: 20px auto;
+  background-color: $container-bg-color;
+  border: 1px solid $container-border-color;
+  color: $container-color;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* 日期選擇框 */
+.dateBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dateBox span {
+  font-size: 14px;
+}
+
+input {
+  background-color: $input-bg-color;
+  color: $input-color;
+  border: 1px solid $input-border-color;
+
+}
+
+.dateBox input {
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.dateBox input:disabled {
+  background-color: $input-dateBox-bg-color-disable;
+  border-color: $input-dateBox-border-color-disable;
+  color: $input-dateBox-color-disable;
+}
+
+/* 搜尋框 */
+.searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchInput {
+  width: 380px;
+  padding: 8px;
+  border-radius: 50px;
+  font-size: 14px;
+
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  scale: 1.2;
+  color: $icon-color;
+  cursor: pointer;
+  border: 1px solid $input-border-color;
+  border-radius: 20px;
+  width: 80px;
+  transition: transform 0.3s ease;
+
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.resetBtn {
+  border: none;
+  width: unset;
+}
+
+.tool-box {
+  margin-left: 13.5%;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+input:focus {
+  border: 1px solid $input-focus-border-color;
+  outline: none;
+}
+
+.seeResult {
+  margin: auto 5px;
+  cursor: pointer;
+  border: 1px solid $input-border-color;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: $see-result-bg-color;
+  color: $see-result-color;
+  transition: background-color 0.3s ease;
+}
+
+.seeResult:hover {
+  background-color: $see-result-hover-bg-color;
+  color: $see-result-hover-color;
+}

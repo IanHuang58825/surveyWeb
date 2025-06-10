@@ -1,0 +1,18 @@
+<button class="pageBtn prevBtn" (click)="clear()">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<div class="container">
+  <label> Name
+    <input type="text" [(ngModel)]="req.name">
+  </label>
+  <label> Email
+    <input type="text" [(ngModel)]="req.email">
+  </label>
+  <label> Password
+    <input type="text" [(ngModel)]="req.pwd">
+  </label>
+  <label> Confirm Password
+    <input type="text" [(ngModel)]="confPwd">
+  </label>
+  <button type="button" (click)="reg()">Register</button>
+</div>

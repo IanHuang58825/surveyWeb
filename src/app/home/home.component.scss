@@ -1,0 +1,69 @@
+$title-color: #666ab0;
+$title-pie-color: #e7eefb;
+$title-pie-bg-color: #f7961c;
+$p-color: #3e3d95;
+$btn-bg-color: #8bb5da;
+$btn-hover-color: #e7eefb;
+$btn-hover-bg-color:#3e3d95;
+////////////////////////////////////
+main {
+  margin-top: 65px;
+}
+
+h1 {
+  margin: 50px auto 30px auto;
+  text-align: center;
+  animation: content-slide-in 1.5s steps(21) forwards;
+  white-space: nowrap;
+  overflow: hidden;
+  color: $title-color;
+  font-size: 48px;
+}
+
+span {
+  background-color: $title-pie-bg-color;
+  color: $title-pie-color;
+}
+
+.container {
+  display: flex;
+}
+
+.content {
+  width: 70%;
+}
+
+p {
+  margin: 25px auto 25px auto;
+  width: 70%;
+  line-height: 2rem;
+  color: $p-color;
+}
+
+.BtnBox {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: $btn-bg-color;
+}
+
+button:hover {
+  color: $btn-hover-color;
+  background-color: $btn-hover-bg-color;
+}
+
+img {
+  width: 350px;
+  height: 350px;
+}

@@ -1,0 +1,69 @@
+//外框
+$container-color: #cbd3eb;
+//帳密文字
+$label-text-color: #3e3d95;
+$input-focus-color: #666ab0;
+//登入按鈕
+$button-bg-color: #666ab0;
+$button-text-color: #e7eefb;
+$button-hover-color: #3e3d95;
+//icon
+$icon-color: #666ab0;
+
+//////////////////////////////////////////////////
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.profile-card {
+  background-color: $container-color;
+  padding: 32px;
+  border-radius: 16px;
+  width: 360px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  margin-bottom: 24px;
+  text-align: center;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 16px;
+  color: $label-text-color;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: $button-bg-color;
+  color: $button-text-color;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #303f9f;
+}
+
+.delBtn:hover {
+  background-color: rgb(216, 43, 43);
+}

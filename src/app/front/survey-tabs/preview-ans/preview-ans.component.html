@@ -1,0 +1,88 @@
+<button class="pageBtn prevBtn" (click)="goBack()">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<div class="surveyBox">
+  <!-- 問卷基本資訊 -->
+  <div class="infoBox">
+    <h2 class="title">{{survey.name}}</h2>
+    <h3 class="survey-info">Description:</h3>
+    <h3 class="survey-info">{{survey.description}}</h3>
+    <h3>
+      <label class="person"> Name:
+        <span style="color: red;">*</span>
+        <input type="text" [value]="survey.user_name" [disabled]="true">
+      </label>
+    </h3>
+    <h3>
+      <label class="person"> Email:
+        <span style="color: red;">*</span>
+        <input type="email" [value]="survey.email" [disabled]="true">
+      </label>
+    </h3>
+    <h3>
+      <label class="person"> Phone:
+        <span style="color: red;">*</span>
+        <input type="text" [value]="survey.phone" [disabled]="true">
+      </label>
+    </h3>
+    <h3>
+      <label class="person"> Age:
+        <span style="color: red;">*</span>
+        <input type="number" [value]="survey.age" [disabled]="true">
+      </label>
+    </h3>
+  </div>
+  <!-- 問題資料 -->
+  <div class="questions-container">
+    @for(questionData of survey.questionList; track $index){
+    <div class="questionBox">
+      <h3>
+        Question{{$index+1}}: {{questionData.name}}
+        @if(questionData.must){
+        <span style="color: red;">*</span>
+        }
+      </h3>
+    </div>
+    <!-- 選項資料 -->
+    <!-- 簡答 -->
+    @if(questionData.type == 'text'){
+    @if(questionData.answer){
+    <label>
+      <textarea rows="10" cols="50" [value]="questionData.answer" [disabled]="true"></textarea>
+    </label>
+    }
+    }
+    <!-- 單選 -->
+    @if(questionData.type == 'single'){
+    <div class="choices-box">
+      <ol>
+        @for(choiceData of questionData.options; track $index){
+        <div class="choice-item">
+          @if (choiceData.opId == questionData.radioAns) {
+          <li>{{choiceData.op}}</li>
+          }
+        </div>
+        }
+      </ol>
+    </div>
+    }
+    <!-- 多選 -->
+    @if(questionData.type == 'multi'){
+    <div class="choices-box">
+      <ol>
+        @for(choiceData of questionData.options; track $index){
+        <div class="choice-item">
+          @if (choiceData.boxBoolean) {
+          <li>{{choiceData.op}}</li>
+          }
+        </div>
+        }
+      </ol>
+    </div>
+    }
+    }
+    <div class="line"></div>
+    <button type="button" class="nextPageBtn pageBtn" (click)="save()">
+      <mat-icon>save</mat-icon> Save
+    </button>
+  </div>

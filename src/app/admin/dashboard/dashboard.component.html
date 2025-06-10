@@ -1,0 +1,56 @@
+<app-toolbar2></app-toolbar2>
+<button class="pageBtn prevBtn" (click)="goBack()">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<h1><em>{{survey?.name}}</em></h1>
+<h2>Description: <em>{{survey?.description}}</em></h2>
+<h3>Number of Respondents: {{feedbackData?.feedbackList.length}}</h3>
+@if(feedbackData?.feedbackList.length == 0){
+<h3 class="na">This survey has no been filled out by anyone!!</h3>
+}
+@if(feedbackData?.feedbackList.length != 0){
+<div class="chart-container">
+  @for(question of statisticsList; track $index){
+  @if(question.type != "text"){
+  <div class="chart-item">
+    <div class="content">
+      <h3>{{question.quesName}}</h3>
+    </div>
+    <canvas id="chart{{question.quesId}}"></canvas>
+  </div>
+  }
+  }
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        @for(ques of statisticsList; track $index){
+        <th>{{ques.quesName}}</th>
+        }
+        <th>Fillin Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(feedback of feedbackData?.feedbackList; track $index){
+      <tr>
+        <td>{{ feedback.userName }}</td>
+        <td>{{ feedback.email }}</td>
+        <td>{{ feedback.phone }}</td>
+        @for(respone of feedback?.quesAnswerList; track $index){
+        <td>
+          {{ respone.answers || 'N/A' }}
+        </td>
+        }
+        <td>
+          {{ feedback.fillinDate }}
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+}

@@ -1,0 +1,45 @@
+<div class="profile-container">
+  <div class="profile-card">
+    <h2>User Profile</h2>
+
+    <label>
+      Name:
+      <input type="text" [(ngModel)]="user.name" [disabled]="isDisabled">
+    </label>
+
+    <label>
+      Email:
+      <input type="text" [(ngModel)]="user.email" [disabled]="true">
+    </label>
+    @if(!isDisabled){
+    <label>
+      Current Password:
+      <input type="password" [(ngModel)]="user.oldPwd">
+    </label>
+
+    <label>
+      New Password:
+      <input type="password" [(ngModel)]="user.pwd">
+    </label>
+
+    <label>
+      Confirm New Password:
+      <input type="password" [(ngModel)]="confirmPwd">
+    </label>
+    }
+    <button (click)="toggleEdit()">
+      {{ isDisabled ? 'Edit Info' : 'Save' }}
+    </button>
+    @if(isDis){
+      <button class="delBtn" (click)="delAcct()">
+        Delete Account
+      </button>
+    }
+    @if(!isDis){
+      <button class="cancelBtn" (click)="cancel()">
+        Cancel
+      </button>
+    }
+
+
+  </div>

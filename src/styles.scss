@@ -1,0 +1,119 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 按鈕 ///////////////////////////////////////////////////////////////////////////////
+button {
+  cursor: pointer;
+}
+.pageBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  background-color: #dae2f9;
+  color: #666ab0;
+  border: none;
+  border-radius: 50px;
+}
+
+.pageBtn:hover {
+  background-color: #666ab0;
+  color: #e7eefb;
+}
+
+.pageBtn:disabled {
+  background-color: lightgray;
+  border-color: #777777;
+  color: #AAAAAA;
+}
+// 問卷 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$survey-bg-color: #dae2f9;
+$survey-border-color: #3e3d95;
+$survey-color: #3e3d95;
+$input-border-color: #3e3d95;
+$toolbox-bg-color: #dae2f9;
+$addBtn-bg-color: #21d48d;
+$delBtn-bg-color: #db7c24;
+$fucB-color: #dae2f9;
+$fucC-color: #dae2f9;
+.surveyBox {
+  color: $survey-color;
+  margin: 30px auto 0 auto;
+  width: 55%;
+  background-color: $survey-bg-color;
+  border: 1px solid $survey-border-color;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.infoBox {
+  margin-bottom: 20px;
+  border-bottom: 2px solid $survey-border-color;
+}
+.questionBox{
+  margin-top: 100px;
+}
+
+.line {
+  border-bottom: 2px solid $survey-border-color;
+}
+
+.quesTopBox {
+  display: flex;
+}
+
+.dateInput {
+  width: 30%;
+  height: 40px;
+}
+
+.reqInput {
+  width: 10%;
+  margin-left: 0px;
+}
+
+.line{
+  border-bottom: 2px solid $survey-border-color;
+}
+// 動畫 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@keyframes content-slide-in {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 18ch;
+  }
+}
+
+
+html {
+  @include mat.theme((color: (theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

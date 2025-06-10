@@ -1,0 +1,73 @@
+.prevBtn{
+  margin: 20px auto auto 20px;
+}
+//外框
+$container-color: #cbd3eb;
+//帳密文字
+$label-text-color: #3e3d95;
+//登入按鈕
+$button-bg-color: #666ab0;
+$button-text-color: #e7eefb;
+$button-hover-color: #3e3d95;
+//icon
+$icon-color: #666ab0;
+//////////////////////////////////////////////
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: $container-color;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: bold;
+  color: $label-text-color;
+}
+
+input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+button[type="button"] {
+  width: 100%;
+  padding: 12px;
+  background-color: $button-bg-color;
+  color: $button-text-color;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button[type="button"]:hover {
+  background-color: $button-hover-color;
+}
+
+.prevBtn {
+  margin: 10px auto auto 20px;
+}
+
+.pageBtn.prevBtn mat-icon {
+  font-size: 20px;
+  vertical-align: middle;
+}

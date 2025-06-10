@@ -1,0 +1,58 @@
+$input-border-color: #3e3d95;
+
+///////////////////////////////////////
+///
+.title {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.survey-info,
+h3,
+li,
+textarea {
+  margin: 20px auto 10px 10%;
+  text-align: start;
+}
+
+.person {
+  display: block;
+  width: 80%;
+}
+
+.person>input {
+  margin: 10px 0 0 0;
+  width: 100%;
+  min-height: 3em;
+  border: none;
+  border-bottom: 1px solid $input-border-color;
+  border-radius: 8px 8px 0 0;
+}
+
+button {
+  color: $input-border-color;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.choices-box {
+  margin-left: 3%;
+}
+
+.prevBtn {
+  margin: 20px auto auto 5%;
+}
+
+.btnBox {
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nextPageBtn {
+  margin: 20px 10% 30px auto;
+}

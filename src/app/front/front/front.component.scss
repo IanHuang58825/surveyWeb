@@ -1,0 +1,14 @@
+.fixed-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white; // 防止背景透出
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); // 讓 toolbar 有浮起來的感覺
+}
+
+.content-container {
+  margin-top: 64px; // 跟 toolbar 高度一樣
+  padding: 20px;     // 可選，讓內容不貼邊
+}

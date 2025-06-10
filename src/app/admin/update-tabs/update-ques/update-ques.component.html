@@ -1,0 +1,78 @@
+<button class="pageBtn prevBtn" (click)="goBack()">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<div class="surveyBox container slideInRight">
+  <div class="infoBox">
+    <label>
+      <h2>Title:</h2>
+      <input [(ngModel)]="Editedsurvey.name" type="text">
+    </label>
+    <label>
+      <h4>Description:</h4>
+      <textarea rows="4" cols="50" [(ngModel)]="Editedsurvey.description"></textarea>
+    </label>
+    <label>
+      <h4>Start date:</h4>
+      <input type="date" [(ngModel)]="Editedsurvey.startDate" [min]="today">
+    </label>
+    <label>
+      <h4>EndDate</h4>
+      <input type="date" [(ngModel)]="Editedsurvey.endDate" [min]="Editedsurvey.startDate">
+    </label>
+  </div>
+  <div class="questions-container">
+    @for(questionData of Editedsurvey.questionList; track $index) {
+    <div class="questionBox">
+      <label>
+        <h4>Question{{$index+1}}:</h4>
+        <input name="question" type="text" [(ngModel)]="questionData.name">
+      </label>
+      <div class="quesTopBox">
+        <label>
+          <h4>Question type:</h4>
+          <select [(ngModel)]="questionData.type">
+            <option value="single">Single-Select Question</option>
+            <option value="multi">Multi-Seclect Question</option>
+            <option value="text">Text-Entry Questions</option>
+          </select>
+        </label>
+        <label>
+          <h4>Required:</h4>
+          <input class="reqInput" type="checkbox" [(ngModel)]="questionData.must">
+        </label>
+      </div>
+      @if(questionData.type != 'text') {
+      @for(choiceData of questionData.options; track $index){
+      <label>
+        <h4>Choice:{{$index+1}}</h4>
+        <input type="text" [(ngModel)]="choiceData.op">
+      </label>
+      <button class="funcCBtn delBtn" (click)="delOption(questionData.options, $index)" type="button"
+        [disabled]="questionData.options.length < 3">
+        <mat-icon>remove</mat-icon> del Choice
+      </button>
+      }
+      }
+      <button class="funcCBtn addBtn" type="button" (click)="addOption(questionData)">
+        <mat-icon>add</mat-icon> add Choice
+      </button>
+    </div>
+    <div class="toolBox">
+      @if ($index === Editedsurvey.questionList.length - 1){
+      <button type="button" class="funcQBtn addBtn" (click)="addQuestion()">
+        <mat-icon>add_circle</mat-icon> add Question
+      </button>
+      }
+      <button type="button" class="funcQBtn delBtn" (click)="delQuestion($index)"
+        [disabled]="Editedsurvey.questionList.length < 2">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </div>
+    <div class="line"></div>
+    }
+  </div>
+  <button type="button" class="nextPageBtn pageBtn" (click)="nextPage()" [disabled]="!Editedsurvey.name || !Editedsurvey.description
+    || !Editedsurvey.startDate || !Editedsurvey.endDate || hasIncompleteQuestions()">
+    <mat-icon style="scale: 1.5;">arrow_forward</mat-icon>
+  </button>
+</div>

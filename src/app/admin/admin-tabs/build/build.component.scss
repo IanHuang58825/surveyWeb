@@ -1,0 +1,96 @@
+$survey-bg-color: #dae2f9;
+$survey-border-color: #3e3d95;
+$survey-color: #3e3d95;
+$input-border-color: #3e3d95;
+$toolbox-bg-color: #dae2f9;
+$addBtn-bg-color: #21d48d;
+$delBtn-bg-color: #db7c24;
+$fucB-color: #dae2f9;
+$fucC-color: #dae2f9;
+
+///////////////////////////////////////
+
+label,
+.quesBox {
+  display: block;
+  margin: 10px auto 20px 10%;
+  width: 80%;
+}
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+  width: 100%;
+  min-height: 3em;
+  border: none;
+  border-bottom: 1px solid $input-border-color;
+  border-radius: 8px 8px 0 0;
+}
+
+button {
+  color: $input-border-color;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+button:hover{
+  transform: scale(1.05);
+}
+
+
+.title {
+  height: 50px;
+  font-size: 16px;
+}
+
+.funcQBtn, .funcCBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 20px auto;
+  border: none;
+  background-color: transparent;
+  color: $fucC-color;
+  border-radius: 10px;
+  border: 1px solid $input-border-color;
+  width: 150px;
+  height: 50px;
+
+}
+
+// .reqInput {
+//   width: 10%;
+//     margin-left: 0px;
+
+// }
+
+.funcCBtn {
+  width: 120px;
+  height: 40px;
+  justify-content:flex-start;
+  margin: 10px auto 10px 10%;
+  padding-left: 5px;
+  color: $fucC-color;
+}
+
+.addBtn {
+  background-color: $addBtn-bg-color;
+}
+
+.delBtn {
+  background-color: $delBtn-bg-color;
+}
+
+.nextPageBtn {
+  margin: 20px 10% 30px auto;
+}
+
+.prevBtn{
+  margin: 20px auto auto 5%;
+}
+.toolBox {
+  background-color: $toolbox-bg-color;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}

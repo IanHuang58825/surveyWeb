@@ -1,0 +1,24 @@
+<div class="fixed-toolbar">
+  <app-toolbar2></app-toolbar2>
+</div>
+<!-- navslider -->
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <!-- selection -->
+    <button type="button" class="funcBtn" routerLink="/adminTabs/build">Create a new survey</button>
+    <button type="button" class="funcBtn" (click)="showTable()">Mat-Table</button>
+    <button type="button" class="funcBtn" (click)="showWorkSpace()">Profile</button>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <span class="toggle" mat-button (click)="drawer.toggle()">
+      <mat-icon class=""menu>menu_open</mat-icon>
+    </span>
+    <!-- main content -->
+    @if(matTable){
+      <app-mat-table [quizData]="quizData"></app-mat-table>
+    }
+    @if(profile){
+      <app-work-space></app-work-space>
+    }
+  </div>
+</mat-drawer-container>
