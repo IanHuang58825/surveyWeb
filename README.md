@@ -18,6 +18,19 @@ A full-stack dynamic survey platform that allows administrators to manage survey
 
 ---
 
+## Tech Stack
+
+| Layer      | Technology                |
+|------------|----------------------------|
+| Frontend   | Angular 19, Angular Material |
+| Backend    | Spring Boot (Java)         |
+| Database   | MySQL                      |
+| Tools      | VS Code, Eclipse, MySQL Workbench |
+
+---
+
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+
 ### home page
 ![homepage Preview](pictures/homepage.png)
 ## Admin Panel
@@ -36,19 +49,6 @@ A full-stack dynamic survey platform that allows administrators to manage survey
 ![Survey Preview](pictures/fillin2.png)
 ### preview
 ![Survey Preview](pictures/fp.png)
-
-## Tech Stack
-
-| Layer      | Technology                |
-|------------|----------------------------|
-| Frontend   | Angular 19, Angular Material |
-| Backend    | Spring Boot (Java)         |
-| Database   | MySQL                      |
-| Tools      | VS Code, Eclipse, MySQL Workbench |
-
----
-
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
 ## Development server
 
