@@ -31,15 +31,15 @@ A full-stack dynamic survey platform that allows administrators to manage survey
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
-### home page
+### Home page
 ![homepage Preview](pictures/homepage.png)
 ## Admin Panel
 ### admin page
 ![admin Preview](pictures/adminpage.png)
-### create survey
+### Create survey
 ![survey1 Preview](pictures/q1.png)
 ![survey2 Preview](pictures/q2.png)
-### preview 
+### Preview 
 ![survey2 Preview](pictures/cp.png)
 ### dashboard
 ![survey2 Preview](pictures/result.png)
@@ -47,7 +47,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 ### fillin page
 ![Survey Preview](pictures/filin1.png)
 ![Survey Preview](pictures/fillin2.png)
-### preview
+### Preview
 ![Survey Preview](pictures/fp.png)
 
 ## Development server
