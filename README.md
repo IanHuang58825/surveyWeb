@@ -2,23 +2,24 @@
 A full-stack dynamic survey platform that allows administrators to manage surveys and users to participate in them through an intuitive web interface.
 ---
 
-## 📌 Features
+## Features
 
-### 🔧 Admin Panel
+### Admin Panel
 
 - Create, preview, edit, and delete surveys
 - Save surveys as drafts or publish them
 - View user responses and summary statistics
 
-### 📝 User Interface
+### User Interface
 
 - Fill out published surveys before their expiration
 - Preview answers before submission
 - Submit final responses securely
 
 ---
+![Survey Preview](surveyWeb/blob/main/pictures/adminpage.png)
 
-## 🧱 Tech Stack
+## Tech Stack
 
 | Layer      | Technology                |
 |------------|----------------------------|
