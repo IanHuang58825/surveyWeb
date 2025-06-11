@@ -17,7 +17,7 @@ A full-stack dynamic survey platform that allows administrators to manage survey
 - Submit final responses securely
 
 ---
-![Survey Preview](surveyWeb/blob/main/pictures/adminpage.png)
+![Survey Preview](pictures/adminpage.png)
 
 ## Tech Stack
 
