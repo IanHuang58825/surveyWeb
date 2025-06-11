@@ -32,7 +32,7 @@ A full-stack dynamic survey platform that allows administrators to manage survey
 ![survey2 Preview](pictures/result.png)
 ## User Interface
 ### fillin page
-![Survey Preview](pictures/fillin1.png)
+![Survey Preview](pictures/filin1.png)
 ![Survey Preview](pictures/fillin2.png)
 ### preview
 ![Survey Preview](pictures/fp.png)
