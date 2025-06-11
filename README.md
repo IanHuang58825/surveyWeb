@@ -1,4 +1,33 @@
 # SurveyWeb
+A full-stack dynamic survey platform that allows administrators to manage surveys and users to participate in them through an intuitive web interface.
+---
+
+## 📌 Features
+
+### 🔧 Admin Panel
+
+- Create, preview, edit, and delete surveys
+- Save surveys as drafts or publish them
+- View user responses and summary statistics
+
+### 📝 User Interface
+
+- Fill out published surveys before their expiration
+- Preview answers before submission
+- Submit final responses securely
+
+---
+
+## 🧱 Tech Stack
+
+| Layer      | Technology                |
+|------------|----------------------------|
+| Frontend   | Angular 19, Angular Material |
+| Backend    | Spring Boot (Java)         |
+| Database   | MySQL                      |
+| Tools      | VS Code, Eclipse, MySQL Workbench |
+
+---
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
