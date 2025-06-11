@@ -17,7 +17,25 @@ A full-stack dynamic survey platform that allows administrators to manage survey
 - Submit final responses securely
 
 ---
-![Survey Preview](pictures/adminpage.png)
+
+### home page
+![homepage Preview](pictures/homepage.png)
+## Admin Panel
+### admin page
+![admin Preview](pictures/adminpage.png)
+### create survey
+![survey1 Preview](pictures/q1.png)
+![survey2 Preview](pictures/q2.png)
+### preview 
+![survey2 Preview](pictures/cp.png)
+### dashboard
+![survey2 Preview](pictures/result.png)
+## User Interface
+### fillin page
+![Survey Preview](pictures/fillin1.png)
+![Survey Preview](pictures/fillin2.png)
+### preview
+![Survey Preview](pictures/fp.png)
 
 ## Tech Stack
 
